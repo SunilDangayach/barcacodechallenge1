@@ -20,11 +20,9 @@ public class Problem1 {
 
 	private static int solution(double[] X, double[] Y) {
 		int count = 0;
-		for(int i=0 ,len=X.length; i<len ; i++){ 
-			for(int j=i+1 ; j<len ; j++){
+		for(int i=0 ,len=X.length; i<len-2 ; i++){ 
+			for(int j=i+1 ; j<len-1 ; j++){
 				for(int k=j+1 ; k<len ; k++){
-					if(k==i || k==j)
-						continue;
 					if( ((Y[k]-Y[j])/(X[k]-X[j]) == (Y[j]-Y[i])/(X[j]-X[i]) ) //BC==AB
 							&& ((Y[k]-Y[i])/(X[k]-X[i]) == (Y[j]-Y[i])/(X[j]-X[i])) )//AC==AB
 						count++;				
